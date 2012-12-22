@@ -8,6 +8,7 @@ Installation
 
 buildout
 
+```
 [buildout]
 extensions = mr.developer
 
@@ -16,3 +17,4 @@ eggs =
 
 [sources]
 pybloomfire = git git://github.com/patroqueeet/pybloomfire.git
+```
