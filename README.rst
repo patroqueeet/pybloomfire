@@ -1,9 +1,12 @@
-# pybloomfire
+pybloomfire
+===============
 
 providing access to bloomfire SSO
 
-# Installation
-## buildout
+Installation
+==============
+
+buildout
 
 [buildout]
 extensions = mr.developer
