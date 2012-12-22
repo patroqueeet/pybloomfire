@@ -6,15 +6,14 @@ providing access to bloomfire SSO
 Installation
 ==============
 
-buildout
+buildout::
 
-```
-[buildout]
-extensions = mr.developer
+    [buildout]
+    extensions = mr.developer
 
-eggs =
-    pybloomfire
+    eggs =
+        pybloomfire
 
-[sources]
-pybloomfire = git git://github.com/patroqueeet/pybloomfire.git
-```
+    [sources]
+    pybloomfire = git git://github.com/patroqueeet/pybloomfire.git
+
