@@ -10,16 +10,14 @@ class API(object):
     def __init__(self, subdomain, api_key, auth_email, auth_password):
         self._api_key = api_key
         self._endpoint_prefix = 'https://%s.bloomfire.com/api/' % subdomain
-        
         self._authenticate(auth_email, auth_password)
-        
-        
     
     def _authenticate(self, auth_email, auth_password):
         passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
         passman.add_password(None, self._endpoint_prefix, auth_email, auth_password)
+        proxyhandler = urllib2.ProxyHandler()
         authhandler = urllib2.HTTPBasicAuthHandler(passman)
-        opener = urllib2.build_opener(authhandler)
+        opener = urllib2.build_opener(authhandler, proxyhandler)
         urllib2.install_opener(opener)
     
     def get(self, api_name, kwargs=None):
