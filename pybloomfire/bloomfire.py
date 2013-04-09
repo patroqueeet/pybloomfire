@@ -38,5 +38,11 @@ class API(object):
             response_dict = json.loads(result.read())
         except urllib2.HTTPError as http_error:
             response_dict = json.loads(http_error.read())
+        # close connection properly
+        finally:
+            try:
+                result.close()
+            except NameError:
+                pass
         return response_dict
 
